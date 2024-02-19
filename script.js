@@ -19,3 +19,25 @@ function displayTitle () {
         console.table(Book.title)
     });
 }
+
+const addButton = document.getElementById('addBookButton');
+const cancelButton = document.getElementById('cancel');
+const dialog = document.getElementById('newBookDialog');
+
+function openCheck (dialog) {
+    if (dialog.open) {
+        return 'dialog open';
+    } else {
+        return 'dialog closed';
+    }
+};
+
+addButton.addEventListener('click', () => {
+dialog.showModal();
+openCheck(dialog);
+});
+
+cancelButton.addEventListener('click', () => {
+    dialog.close();
+    openCheck(dialog);
+});
