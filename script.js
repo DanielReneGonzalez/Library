@@ -20,6 +20,8 @@ function displayTitle () {
     });
 }
 
+// For popup when add book is pressed
+
 const addButton = document.getElementById('addBookButton');
 const cancelButton = document.getElementById('cancel');
 const dialog = document.getElementById('newBookDialog');
