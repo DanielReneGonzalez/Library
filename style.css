@@ -34,3 +34,28 @@
     text-align: center;
     margin-top: auto;
 }
+
+/* For dialog box */
+
+#newBookDialog {
+    border-radius: 10px;
+}
+
+#dialogForm {
+    list-style: none;
+    padding-left: 0px;
+    margin: 15px;
+}
+
+#newBookDialog div {
+    margin: 15px;
+}
+
+#dialogForm li {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+#dialogForm li label {
+    margin-right: auto
+}
