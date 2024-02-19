@@ -7,25 +7,37 @@
 .header {
     grid-column: 1 / 4;
     display: flex;
+    background-color: beige;
 }
 
 .title {
     margin-right: auto;
+    align-self: center;
+    flex: auto;
+    text-align: center;
 }
 
-.addBookButton {
+.addBookButtonContainer {
     justify-items: end;
     align-self: end;
+}
+
+#addBookButton {
+    border-radius: 15px;
+    width: 90px;
+    height: 25px;
 }
 
 .sidebar {
     grid-column: 1 / 2;
     grid-row: 2 / 4;
+    background-color: aliceblue;
 }
 
 .main {
     grid-column: 2 / 4;
     grid-row: 2 / 4;
+    background-color: azure;
 }
 
 .footer {
@@ -33,6 +45,7 @@
     grid-column: 1 / 4;
     text-align: center;
     margin-top: auto;
+    background-color: blanchedalmond;
 }
 
 /* For dialog box */
