@@ -14,7 +14,7 @@
             <div class="addBookButtonContainer"><button id="addBookButton">Add Book</button></div>
         </div>
                 <dialog id="newBookDialog">
-                    <form method="dialog">
+                    <form id="form" method="dialog">
                         <ul id="dialogForm">
                             <li>
                                 <label for="title">Title:</label>
@@ -30,12 +30,12 @@
                             </li>
                             <li>
                                 <label for="read">Read</label>
-                                <input type="checkbox" name="read" id="read">
+                                <input type="checkbox" name="read" value="yes" id="read">
                             </li>
                         </ul>
                         <div>
                             <button id="cancel" type="reset">Cancel</button>
-                            <button type="submit">Submit</button>
+                            <button id="submitButton" type="submit">Submit</button>
                         </div>
                     </form>
                 </dialog>
