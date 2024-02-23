@@ -1,21 +1,20 @@
-const myLibray = [];
-
-function Book (title, author, pages, read) {
+const myLibrary = [];
+function Book(title, author, pages, read) {
     this.title = title;
     this.author = author;
     this.pages = pages;
     this.read = read;
-    this.info = function() {
+    this.info= function() {
         return [([this.title, 'by', this.author].join(" ")), this.pages, this.read].join(", ")
     };
 };
 
 function addBookToLibrary (book) {
-    myLibray.push(book);
+    myLibrary.push(book);
 };
 
 function displayTitle () {
-    myLibray.forEach((Book) => {
+    myLibrary.forEach((Book) => {
         console.table(Book.title)
     });
 }
@@ -43,3 +42,26 @@ cancelButton.addEventListener('click', () => {
     dialog.close();
     openCheck(dialog);
 });
+
+const form = document.querySelector('form');
+const submitButton = document.getElementById('submitButton');
+    submitButton.addEventListener('click', function getBook (){
+        const dialogTitle = document.getElementById('title').value;
+        const dialogAuthor = document.getElementById('author').value;
+        const dialogPages = document.getElementById('pages').value;
+        const dialogRead = document.getElementById('read').value;
+        const newBook = new Book (dialogTitle, dialogAuthor, dialogPages, dialogRead);
+        addBookToLibrary(newBook)
+    });
+
+
+
+     
+    /*function Book (title, author, pages, read) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
+        this.info = function() {
+            return [([this.title, 'by', this.author].join(" ")), this.pages, this.read].join(", ")
+        };*/
