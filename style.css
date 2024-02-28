@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap');
+
+* {
+    font-family: 'IM Fell English SC', serif;
+    margin: 0px;
+}
+
 .grid-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -15,6 +22,7 @@
     align-self: center;
     flex: auto;
     text-align: center;
+    font-size: 48px;    
 }
 
 .addBookButtonContainer {
@@ -34,6 +42,8 @@
     background-color: aliceblue;
     text-align: center;
     font-size: larger;
+    border-right: 1px solid black ;
+    height: 100vh;
 }
 
 #book {
@@ -58,6 +68,8 @@
 
 #newBookDialog {
     border-radius: 10px;
+    left: 36%;
+    top: 29%;
 }
 
 #dialogForm {
