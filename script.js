@@ -52,8 +52,14 @@ const submitButton = document.getElementById('submitButton');
         const dialogRead = document.getElementById('read').value;
         const newBook = new Book (dialogTitle, dialogAuthor, dialogPages, dialogRead);
         addBookToLibrary(newBook)
+        addBookSideBar(newBook)
     });
 
+// Sidebar book list
+
+function addBookSideBar() {
+    document.getElementById('book').innerHTML += document.getElementById('title').value;
+};
 
 
      
