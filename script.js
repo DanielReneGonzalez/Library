@@ -58,7 +58,10 @@ const submitButton = document.getElementById('submitButton');
 // Sidebar book list
 
 function addBookSideBar() {
-    document.getElementById('book').innerHTML += document.getElementById('title').value;
+    const booksidebar = document.querySelector('#book');
+    const bookDiv = document.createElement('div');
+    bookDiv.textContent += document.getElementById('title').value;
+    booksidebar.appendChild(bookDiv);
 };
 
 
