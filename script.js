@@ -62,7 +62,26 @@ function addBookSideBar() {
     const bookDiv = document.createElement('div');
     bookDiv.textContent += document.getElementById('title').value;
     booksidebar.appendChild(bookDiv);
+    
 };
+function checkTitle() {
+    const title1 = document.getElementById('title').value;
+    if (myLibrary.includes(title1)) {
+        alert('Book in catalog already.');
+        title1.focus();
+    }
+}
+
+// When book is clicked, Main infomation
+
+const showInfoMain = document.querySelector('#book');
+const mainDiv = document.querySelector('.card');
+    showInfoMain.addEventListener('click', function showInfo(){
+        const mainInfo = document.createElement('div');
+        mainInfo.setAttribute('class', 'mainInfo');
+        mainDiv.innerHTML="";
+        mainDiv.appendChild(mainInfo);
+    })
 
 
      
