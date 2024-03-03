@@ -77,10 +77,19 @@ function checkTitle() {
 const showInfoMain = document.querySelector('#book');
 const mainDiv = document.querySelector('.card');
     showInfoMain.addEventListener('click', function showInfo(){
+        mainDiv.innerHTML="";
         const mainInfo = document.createElement('div');
         mainInfo.setAttribute('class', 'mainInfo');
-        mainDiv.innerHTML="";
+        const mainTitle = document.createElement('div');
+        const mainAuthor = document.createElement('div');
+        const pages = document.createElement('div');
+        mainTitle.innerText = 'Title:';
+        mainAuthor.innerText = 'Author:';
+        pages.innerText = 'Pages:';
         mainDiv.appendChild(mainInfo);
+        mainInfo.appendChild(mainTitle);
+        mainInfo.appendChild(mainAuthor);
+        mainInfo.appendChild(pages);
     })
 
 
