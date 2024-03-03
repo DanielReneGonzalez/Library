@@ -47,13 +47,20 @@
 }
 
 #book {
-
+    height: 30px;
+    cursor: pointer;
 }
 
 .main {
     grid-column: 2 / 4;
     grid-row: 2 / 4;
     background-color: azure;
+}
+
+.mainInfo {
+    background-color: blue;
+    width: 200px;
+    height: 500px;
 }
 
 .footer {
