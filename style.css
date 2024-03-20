@@ -36,25 +36,14 @@
     height: 25px;
 }
 
-.sidebar {
-    grid-column: 1 / 2;
-    grid-row: 2 / 4;
-    background-color: aliceblue;
-    text-align: center;
-    font-size: larger;
-    border-right: 1px solid black ;
-    height: 100vh;
-}
-
-#book {
-    height: 30px;
-    cursor: pointer;
-}
 
 .main {
-    grid-column: 2 / 4;
+    grid-column: 1 / 4;
     grid-row: 2 / 4;
     background-color: azure;
+    height: fit-content;
+    min-height: 100vh;
+
 }
 
 .mainInfo {
@@ -69,6 +58,8 @@
     position: relative;
     left: 4.5rem;
     bottom: -2rem;
+    text-wrap: wrap;
+    word-break: break-all;
 }
 
 .mainInfo div:nth-child(2) {
