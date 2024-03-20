@@ -49,8 +49,7 @@ const submitButton = document.getElementById('submitButton');
         const dialogTitle = document.getElementById('title').value;
         const dialogAuthor = document.getElementById('author').value;
         const dialogPages = document.getElementById('pages').value;
-        const dialogRead = document.getElementById('read').value;
-        const newBook = new Book (dialogTitle, dialogAuthor, dialogPages, dialogRead);
+        const newBook = new Book (dialogTitle, dialogAuthor, dialogPages);
         addBookToLibrary(newBook)
         addBookToMain(newBook)
     });
@@ -63,13 +62,23 @@ function addBookToMain() {
     const mainTitle = document.createElement('div');
     const mainAuthor = document.createElement('div');
     const pagesDiv = document.createElement('div');
-    mainTitle.innerText = `Title: ${title.value}`
-    mainAuthor.innerText = `Author: ${author.value}`
-    pagesDiv.innerText = `Pages: ${pages.value}`
+    const readCheckBox = document.createElement('input');
+        readCheckBox.type = 'checkbox';
+        readCheckBox.className = 'readCheckBox';
+        readCheckBox.name = 'Read';
+        readCheckBox.value = 'read';
+        const label = document.createElement('label');
+        label.htmlFor = 'readCheckBox';
+        label.appendChild (document.createTextNode('Read:'));
+    mainTitle.innerText = `Title: ${title.value}`;
+    mainAuthor.innerText = `Author: ${author.value}`;
+    pagesDiv.innerText = `Pages: ${pages.value}`;
     mainDiv.appendChild(bookDiv);
     bookDiv.appendChild(mainTitle);
     bookDiv.appendChild(mainAuthor);
     bookDiv.appendChild(pagesDiv);
+    bookDiv.appendChild(readCheckBox);
+    bookDiv.appendChild(label);
 }
 
 // Sidebar book list
