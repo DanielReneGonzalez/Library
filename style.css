@@ -58,6 +58,7 @@
     position: relative;
     left: 4.5rem;
     bottom: -2rem;
+    max-width: 10rem;
     text-wrap: wrap;
     word-break: break-all;
 }
@@ -66,12 +67,33 @@
     position: relative;
     left: 4.5rem;
     bottom: -2.5rem;
+    max-width: 10rem;
+    text-wrap: wrap;
+    word-break: break-all;
 }
 
-.mainInfo div:last-child {
+.mainInfo div:nth-child(3) {
     position: relative;
     left: 4.5rem;
     bottom: -3rem;
+}
+
+.mainInfo input {
+    position: relative;
+    left: 7.5rem;
+    bottom: -3.5rem;
+}
+
+.mainInfo label {
+    position: relative;
+    left: 3.7rem;
+    bottom: -3.4rem;
+}
+
+.card {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .footer {
