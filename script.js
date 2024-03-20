@@ -52,18 +52,35 @@ const submitButton = document.getElementById('submitButton');
         const dialogRead = document.getElementById('read').value;
         const newBook = new Book (dialogTitle, dialogAuthor, dialogPages, dialogRead);
         addBookToLibrary(newBook)
-        addBookSideBar(newBook)
+        addBookToMain(newBook)
     });
+
+
+function addBookToMain() {
+    const mainDiv = document.querySelector('.card');
+    const bookDiv = document.createElement('div');
+    bookDiv.setAttribute('class', 'mainInfo');
+    const mainTitle = document.createElement('div');
+    const mainAuthor = document.createElement('div');
+    const pagesDiv = document.createElement('div');
+    mainTitle.innerText = `Title: ${title.value}`
+    mainAuthor.innerText = `Author: ${author.value}`
+    pagesDiv.innerText = `Pages: ${pages.value}`
+    mainDiv.appendChild(bookDiv);
+    bookDiv.appendChild(mainTitle);
+    bookDiv.appendChild(mainAuthor);
+    bookDiv.appendChild(pagesDiv);
+}
 
 // Sidebar book list
 
-function addBookSideBar() {
-    const booksidebar = document.querySelector('#book');
-    const bookDiv = document.createElement('div');
-    bookDiv.textContent += document.getElementById('title').value;
-    booksidebar.appendChild(bookDiv);
+// function addBookSideBar() {
+//     const booksidebar = document.querySelector('#book');
+//     const bookDiv = document.createElement('div');
+//     bookDiv.textContent += document.getElementById('title').value;
+//     booksidebar.appendChild(bookDiv);
     
-};
+// };
 function checkTitle() {
     const title1 = document.getElementById('title').value;
     if (myLibrary.includes(title1)) {
@@ -74,23 +91,25 @@ function checkTitle() {
 
 // When book is clicked, Main infomation
 
-const showInfoMain = document.querySelector('#book');
-const mainDiv = document.querySelector('.card');
-    showInfoMain.addEventListener('click', function showInfo(){
-        mainDiv.innerHTML="";
-        const mainInfo = document.createElement('div');
-        mainInfo.setAttribute('class', 'mainInfo');
-        const mainTitle = document.createElement('div');
-        const mainAuthor = document.createElement('div');
-        const pages = document.createElement('div');
-        mainTitle.innerText = 'Title:';
-        mainAuthor.innerText = 'Author:';
-        pages.innerText = 'Pages:';
-        mainDiv.appendChild(mainInfo);
-        mainInfo.appendChild(mainTitle);
-        mainInfo.appendChild(mainAuthor);
-        mainInfo.appendChild(pages);
-    })
+
+// const showInfoMain = document.querySelector('#book');
+// const mainDiv = document.querySelector('.card');
+//     showInfoMain.addEventListener('click', function showInfo(){
+//         mainDiv.innerHTML="";
+//         const text = clickTitle();
+//         const mainInfo = document.createElement('div');
+//         mainInfo.setAttribute('class', 'mainInfo');
+//         const mainTitle = document.createElement('div');
+//         const mainAuthor = document.createElement('div');
+//         const pages = document.createElement('div');
+//         mainTitle.innerText = `Title: ${text}`;
+//         mainAuthor.innerText = 'Author:';
+//         pages.innerText = 'Pages:';
+//         mainDiv.appendChild(mainInfo);
+//         mainInfo.appendChild(mainTitle);
+//         mainInfo.appendChild(mainAuthor);
+//         mainInfo.appendChild(pages);
+//     })
 
 
      
