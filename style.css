@@ -127,12 +127,20 @@
     background-color: rgb(144, 127, 159);
 }
 
+.footer a {
+    text-decoration: none;
+}
+
+.footer a:visited {
+    text-decoration: none;
+}
+
 /* For dialog box */
 
 #newBookDialog {
     border-radius: 10px;
     left: 36%;
-    top: 29%;
+    top: 34%;
     background-color: rgb(144, 127, 159);
     border-width: thin;
 }
