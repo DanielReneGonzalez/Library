@@ -25,33 +25,30 @@ const addButton = document.getElementById('addBookButton');
 const cancelButton = document.getElementById('cancel');
 const dialog = document.getElementById('newBookDialog');
 
-function openCheck (dialog) {
-    if (dialog.open) {
-        return 'dialog open';
-    } else {
-        return 'dialog closed';
-    }
-};
 
 addButton.addEventListener('click', () => {
 dialog.showModal();
-openCheck(dialog);
 });
 
 cancelButton.addEventListener('click', () => {
     dialog.close();
-    openCheck(dialog);
 });
 
 const form = document.querySelector('form');
 const submitButton = document.getElementById('submitButton');
-    submitButton.addEventListener('click', function getBook (){
+    submitButton.addEventListener('click', function (event){
         const dialogTitle = document.getElementById('title').value;
         const dialogAuthor = document.getElementById('author').value;
         const dialogPages = document.getElementById('pages').value;
-        const newBook = new Book (dialogTitle, dialogAuthor, dialogPages);
-        addBookToLibrary(newBook)
-        addBookToMain(newBook)
+        const newBook = new Book (dialogTitle, dialogAuthor, dialogPages); 
+        if (dialogTitle === '') { 
+            alert('Can not be a blank book title');
+            event.preventDefault();
+        } else {
+            addBookToLibrary(newBook);
+            addBookToMain(newBook);
+        };
+       
     });
 
 
@@ -59,6 +56,7 @@ function addBookToMain() {
     const mainDiv = document.querySelector('.card');
     const bookDiv = document.createElement('div');
     bookDiv.setAttribute('class', 'mainInfo');
+        bookDiv.value = myLibrary.length-1;
     const mainTitle = document.createElement('div');
     const mainAuthor = document.createElement('div');
     const pagesDiv = document.createElement('div');
@@ -70,6 +68,9 @@ function addBookToMain() {
         const label = document.createElement('label');
         label.htmlFor = 'readCheckBox';
         label.appendChild (document.createTextNode('Read:'));
+    const deleteButton = document.createElement('button');
+        deleteButton.id = 'deleteButton';
+    deleteButton.innerText = 'Delete';
     mainTitle.innerText = `Title: ${title.value}`;
     mainAuthor.innerText = `Author: ${author.value}`;
     pagesDiv.innerText = `Pages: ${pages.value}`;
@@ -79,6 +80,12 @@ function addBookToMain() {
     bookDiv.appendChild(pagesDiv);
     bookDiv.appendChild(readCheckBox);
     bookDiv.appendChild(label);
+    bookDiv.appendChild(deleteButton);
+    deleteButton.addEventListener('click', (e) => {
+        e.target.value;
+        myLibrary.splice(e.target.value,1)
+        e.target.parentElement.remove()
+    })
 }
 
 // Sidebar book list
