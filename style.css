@@ -3,6 +3,7 @@
 * {
     font-family: 'IM Fell English SC', serif;
     margin: 0px;
+
 }
 
 .grid-container {
@@ -14,7 +15,10 @@
 .header {
     grid-column: 1 / 4;
     display: flex;
-    background-color: beige;
+    background-color: rgb(188 217 121);
+    overflow: auto;
+    box-shadow: 0px 0px 11px 0px black;
+    z-index: 1;
 }
 
 .title {
@@ -26,21 +30,26 @@
 }
 
 .addBookButtonContainer {
-    justify-items: end;
-    align-self: end;
+    justify-items: flex-end;
+    align-self: flex-end;
+    position: sticky;
+    right: 5%;
+    bottom: 40%;
 }
 
 #addBookButton {
     border-radius: 15px;
-    width: 90px;
-    height: 25px;
+    width: 9rem;
+    height: 1.6rem;
+    background-color: rgb(167, 204, 237);
+    border-style: outset;
 }
 
 
 .main {
     grid-column: 1 / 4;
     grid-row: 2 / 4;
-    background-color: azure;
+    background-color: rgb(167, 204, 237);
     height: fit-content;
     min-height: 100vh;
 
@@ -115,7 +124,7 @@
     grid-column: 1 / 4;
     text-align: center;
     margin-top: auto;
-    background-color: blanchedalmond;
+    background-color: rgb(144, 127, 159);
 }
 
 /* For dialog box */
@@ -124,6 +133,16 @@
     border-radius: 10px;
     left: 36%;
     top: 29%;
+    background-color: rgb(144, 127, 159);
+    border-width: thin;
+}
+
+#newBookDialog input {
+    background-color: rgb(222 228 233);
+}
+
+button {
+    border-radius: 10px;
 }
 
 #dialogForm {
