@@ -27,7 +27,10 @@ const dialog = document.getElementById('newBookDialog');
 
 
 addButton.addEventListener('click', () => {
-dialog.showModal();
+    dialog.showModal();
+    document.getElementById('title').value = '';
+    document.getElementById('author').value = '';
+    document.getElementById('pages').value = '';
 });
 
 cancelButton.addEventListener('click', () => {
@@ -70,7 +73,7 @@ function addBookToMain() {
         label.appendChild (document.createTextNode('Read:'));
     const deleteButton = document.createElement('button');
         deleteButton.id = 'deleteButton';
-    deleteButton.innerText = 'Delete';
+    deleteButton.innerText = 'X';
     mainTitle.innerText = `Title: ${title.value}`;
     mainAuthor.innerText = `Author: ${author.value}`;
     pagesDiv.innerText = `Pages: ${pages.value}`;
