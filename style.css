@@ -54,6 +54,11 @@
     height: 300px;
 }
 
+.mainInfo:hover button {
+    display: inline-block;
+    box-shadow: 1px 2px 6px 0px rgba(0,0,0,0.75)
+}
+
 .mainInfo div:first-child {
     position: relative;
     left: 4.5rem;
@@ -91,10 +96,12 @@
 }
 
 .mainInfo button {
+    display: none;
     position: relative;
-    left: 4.5rem;
-    bottom: -10rem;
-    border-radius: 5px;
+    left: 10.8rem;
+    bottom: 3rem;
+    border-radius: 15px;
+    background-color: rgb(235, 88, 88);
 }
 
 .card {
