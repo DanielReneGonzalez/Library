@@ -139,10 +139,14 @@
 
 #newBookDialog {
     border-radius: 10px;
-    left: 36%;
-    top: 34%;
+    left: 39%;
+    top: 32%;
     background-color: rgb(144, 127, 159);
     border-width: thin;
+}
+
+#newBookDialog::backdrop {
+    backdrop-filter: blur(3px);
 }
 
 #newBookDialog input {
