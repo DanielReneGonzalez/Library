@@ -90,6 +90,13 @@
     bottom: -3.4rem;
 }
 
+.mainInfo button {
+    position: relative;
+    left: 4.5rem;
+    bottom: -10rem;
+    border-radius: 5px;
+}
+
 .card {
     display: flex;
     flex-wrap: wrap;
