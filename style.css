@@ -146,7 +146,7 @@
 }
 
 #newBookDialog::backdrop {
-    backdrop-filter: blur(3px);
+    backdrop-filter: blur(3.5px);
 }
 
 #newBookDialog input {
