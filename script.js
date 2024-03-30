@@ -91,15 +91,6 @@ function addBookToMain() {
     })
 }
 
-// Sidebar book list
-
-// function addBookSideBar() {
-//     const booksidebar = document.querySelector('#book');
-//     const bookDiv = document.createElement('div');
-//     bookDiv.textContent += document.getElementById('title').value;
-//     booksidebar.appendChild(bookDiv);
-    
-// };
 function checkTitle() {
     const title1 = document.getElementById('title').value;
     if (myLibrary.includes(title1)) {
@@ -107,36 +98,3 @@ function checkTitle() {
         title1.focus();
     }
 }
-
-// When book is clicked, Main infomation
-
-
-// const showInfoMain = document.querySelector('#book');
-// const mainDiv = document.querySelector('.card');
-//     showInfoMain.addEventListener('click', function showInfo(){
-//         mainDiv.innerHTML="";
-//         const text = clickTitle();
-//         const mainInfo = document.createElement('div');
-//         mainInfo.setAttribute('class', 'mainInfo');
-//         const mainTitle = document.createElement('div');
-//         const mainAuthor = document.createElement('div');
-//         const pages = document.createElement('div');
-//         mainTitle.innerText = `Title: ${text}`;
-//         mainAuthor.innerText = 'Author:';
-//         pages.innerText = 'Pages:';
-//         mainDiv.appendChild(mainInfo);
-//         mainInfo.appendChild(mainTitle);
-//         mainInfo.appendChild(mainAuthor);
-//         mainInfo.appendChild(pages);
-//     })
-
-
-     
-    /*function Book (title, author, pages, read) {
-        this.title = title;
-        this.author = author;
-        this.pages = pages;
-        this.read = read;
-        this.info = function() {
-            return [([this.title, 'by', this.author].join(" ")), this.pages, this.read].join(", ")
-        };*/
