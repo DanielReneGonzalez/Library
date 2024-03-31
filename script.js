@@ -28,9 +28,7 @@ const dialog = document.getElementById('newBookDialog');
 
 addButton.addEventListener('click', () => {
     dialog.showModal();
-    document.getElementById('title').value = '';
-    document.getElementById('author').value = '';
-    document.getElementById('pages').value = '';
+    form.reset();
 });
 
 cancelButton.addEventListener('click', () => {
@@ -43,7 +41,8 @@ const submitButton = document.getElementById('submitButton');
         const dialogTitle = document.getElementById('title').value;
         const dialogAuthor = document.getElementById('author').value;
         const dialogPages = document.getElementById('pages').value;
-        const newBook = new Book (dialogTitle, dialogAuthor, dialogPages); 
+        const dialogRead = false;
+        const newBook = new Book (dialogTitle, dialogAuthor, dialogPages, dialogRead); 
         if (dialogTitle === '') { 
             alert('Can not be a blank book title');
             event.preventDefault();
@@ -66,11 +65,13 @@ function addBookToMain() {
     const readCheckBox = document.createElement('input');
         readCheckBox.type = 'checkbox';
         readCheckBox.className = 'readCheckBox';
+        readCheckBox.id='readCheckBox'
         readCheckBox.name = 'Read';
         readCheckBox.value = 'read';
         const label = document.createElement('label');
         label.htmlFor = 'readCheckBox';
         label.appendChild (document.createTextNode('Read:'));
+   
     const deleteButton = document.createElement('button');
         deleteButton.id = 'deleteButton';
     deleteButton.innerText = 'X';
@@ -88,8 +89,16 @@ function addBookToMain() {
         e.target.value;
         myLibrary.splice(e.target.value,1)
         e.target.parentElement.remove()
-    })
-}
+    });
+    readCheckBox.addEventListener('change', (e) => {
+        if (e.target.checked){
+            e.target.value;
+            myLibrary[bookDiv.value].read = true
+        } else {myLibrary[bookDiv.value].read = false}
+    });
+};
+
+
 
 function checkTitle() {
     const title1 = document.getElementById('title').value;
