@@ -46,9 +46,18 @@ const submitButton = document.getElementById('submitButton');
         if (dialogTitle === '') { 
             alert('Can not be a blank book title');
             event.preventDefault();
+            stopPropagation();
+        } if (dialogAuthor === '') {
+            alert('Please add an Author');
+            event.preventDefault();
+            stopPropagation();
+        } if (dialogPages === NaN) {
+            event.preventDefault();
+            stopPropagation();
         } else {
             addBookToLibrary(newBook);
             addBookToMain(newBook);
+            checkTitle()
         };
        
     });
