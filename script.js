@@ -65,7 +65,6 @@ function addBookToMain() {
     const readCheckBox = document.createElement('input');
         readCheckBox.type = 'checkbox';
         readCheckBox.className = 'readCheckBox';
-        readCheckBox.id='readCheckBox'
         readCheckBox.name = 'Read';
         readCheckBox.value = 'read';
         const label = document.createElement('label');
