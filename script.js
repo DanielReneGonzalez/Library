@@ -57,7 +57,6 @@ const submitButton = document.getElementById('submitButton');
         } else {
             addBookToLibrary(newBook);
             addBookToMain(newBook);
-            checkTitle()
         };
        
     });
@@ -106,12 +105,3 @@ function addBookToMain() {
     });
 };
 
-
-
-function checkTitle() {
-    const title1 = document.getElementById('title').value;
-    if (myLibrary.includes(title1)) {
-        alert('Book in catalog already.');
-        title1.focus();
-    }
-}
